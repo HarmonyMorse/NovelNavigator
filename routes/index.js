@@ -36,7 +36,8 @@ router.get('/oauth2callback', passport.authenticate(
 // GET - /logout
 router.get('/logout', function(req, res){
   req.logout(function() {
-    res.redirect('/movies');
+    // TODO - Decide where to route
+    res.redirect('/');
   });
 });
 
