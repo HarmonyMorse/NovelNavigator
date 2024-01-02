@@ -4,7 +4,7 @@ module.exports = (req, res, next) => {
     if (req.isAuthenticated()) return next();
     // Redirect to login if the user is not already logged in
     res.render("loggedout", {
-        title: "Please Log In",
+        title: "Novel Navigator",
     });
 };
 /*
