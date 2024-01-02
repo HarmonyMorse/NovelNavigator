@@ -6,6 +6,13 @@ function index(req, res) {
     });
 }
 
+function newProject(req, res) {
+    res.render("projects/new", {
+        title: "New Project"
+    })
+}
+
 module.exports = {
     index,
+    new: newProject,
 };

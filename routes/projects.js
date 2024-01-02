@@ -5,4 +5,7 @@ const projectsCtrl = require("../controllers/projects");
 
 router.get("/", projectsCtrl.index);
 
+// GET /projects/new (new functionality)
+router.get('/new', projectsCtrl.new);
+
 module.exports = router;
