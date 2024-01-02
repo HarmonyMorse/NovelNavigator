@@ -12,7 +12,17 @@ function newProject(req, res) {
     })
 }
 
+function show(req, res) {
+    // const project = await Project.findById(req.params.id).populate('characters');
+    res.render("projects/show", {
+        title: "Some Project",
+        // TODO: add project
+        // project, 
+    })
+}
+
 module.exports = {
     index,
     new: newProject,
+    show,
 };
