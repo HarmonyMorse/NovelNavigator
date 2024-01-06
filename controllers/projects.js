@@ -12,6 +12,16 @@ function newProject(req, res) {
     })
 }
 
+async function create(req, res) {
+    req.body.user = req.user._id;
+    try {
+        const project = await Project.create(req.body);
+        res.redirect(`/projects/${project._id}`);
+    } catch(e3rr) {
+        console.log(err);
+    }
+}
+
 function show(req, res) {
     // const project = await Project.findById(req.params.id).populate('characters');
     const projectId = req.params.id;
@@ -27,5 +37,6 @@ function show(req, res) {
 module.exports = {
     index,
     new: newProject,
+    create,
     show,
 };
