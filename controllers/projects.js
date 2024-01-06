@@ -22,15 +22,14 @@ async function create(req, res) {
     }
 }
 
-function show(req, res) {
-    // const project = await Project.findById(req.params.id).populate('characters');
+async function show(req, res) {
     const projectId = req.params.id;
+    const project = await Project.findById(projectId).populate('characters');
     req.session.projectId = projectId;
     res.render("projects/show", {
-        title: "Some Project",
+        title: project.title,
         projectId,
-        // TODO: add project
-        // project, 
+        project, 
     })
 }
 
