@@ -17,8 +17,14 @@ async function show(req, res) {
     })
 }
 
+function newCharacter(req, res) {
+    res.render('characters/new', {
+        title: "New Character",
+    })
+}
+
 module.exports = {
     // index,
-    // new: newCharacter,
+    new: newCharacter,
     show,
 };

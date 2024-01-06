@@ -7,6 +7,9 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 // GET /
 // router.get('/', charactersCtrl.index);
 
+// GET /new (new functionality)
+router.get('/new', ensureLoggedIn, charactersCtrl.new);
+
 // Showing specific character (.show)
 // GET /:id
 router.get('/:id', ensureLoggedIn, charactersCtrl.show);
