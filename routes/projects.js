@@ -12,6 +12,6 @@ router.get('/new', ensureLoggedIn, projectsCtrl.new);
 router.post('/', ensureLoggedIn, projectsCtrl.create);
 
 // GET /projects/show/:id (show specific project fuctionality)
-router.get('/show/:id', ensureLoggedIn, projectsCtrl.show);
+router.get('/:id', ensureLoggedIn, projectsCtrl.show);
 
 module.exports = router;
