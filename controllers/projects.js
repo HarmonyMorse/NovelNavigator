@@ -1,8 +1,10 @@
 const Project = require("../models/project");
 
-function index(req, res) {
+async function index(req, res) {
+    const projects = await Project.find({user: req.user._id});
     res.render("projects/index", {
         title: "Projects here",
+        projects,
     });
 }
 
