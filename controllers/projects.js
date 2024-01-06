@@ -1,8 +1,10 @@
 const Project = require("../models/project");
 
-function index(req, res) {
+async function index(req, res) {
+    const projects = await Project.find({user: req.user._id});
     res.render("projects/index", {
         title: "Projects here",
+        projects,
     });
 }
 
@@ -12,17 +14,30 @@ function newProject(req, res) {
     })
 }
 
-function show(req, res) {
-    // const project = await Project.findById(req.params.id).populate('characters');
+async function create(req, res) {
+    req.body.user = req.user._id;
+    try {
+        const project = await Project.create(req.body);
+        res.redirect(`/projects/${project._id}`);
+    } catch(e3rr) {
+        console.log(err);
+    }
+}
+
+async function show(req, res) {
+    const projectId = req.params.id;
+    const project = await Project.findById(projectId).populate('characters');
+    req.session.projectId = projectId;
     res.render("projects/show", {
-        title: "Some Project",
-        // TODO: add project
-        // project, 
+        title: project.title,
+        projectId,
+        project, 
     })
 }
 
 module.exports = {
     index,
     new: newProject,
+    create,
     show,
 };

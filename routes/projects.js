@@ -8,7 +8,10 @@ router.get("/", ensureLoggedIn, projectsCtrl.index);
 // GET /projects/new (new functionality)
 router.get('/new', ensureLoggedIn, projectsCtrl.new);
 
+//  POST /projects (create functionality)
+router.post('/', ensureLoggedIn, projectsCtrl.create);
+
 // GET /projects/show/:id (show specific project fuctionality)
-router.get('/show/:id', ensureLoggedIn, projectsCtrl.show);
+router.get('/:id', ensureLoggedIn, projectsCtrl.show);
 
 module.exports = router;
