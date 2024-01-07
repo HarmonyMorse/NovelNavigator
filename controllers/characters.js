@@ -28,11 +28,13 @@ function newCharacter(req, res) {
 
 async function create(req, res) {
     const projectId = req.session.projectId;
+    const project = await Project.findById(projectId);
     req.body.project = projectId;
-    // const project = await Project.findById(projectId);
     req.body.user = req.user._id;
     try {
-        await Character.create(req.body);
+        const character = await Character.create(req.body);
+        project.characters.push(character);
+        await project.save();
         res.redirect(`/projects/${projectId}`);
     } catch(err) {
         console.log(err);
