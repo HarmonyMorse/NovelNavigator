@@ -9,11 +9,11 @@ const Project = require("../models/project");
 // }
 
 async function show(req, res) {
-    // const character = await Character.findById(req.params.id); //.populate('project / user / etc');
+    const character = await Character.findById(req.params.id).populate('project');
     res.render("characters/show", {
-        title: "Some Character",
+        title: `${character.name} -- ${character.project.title}`,
         // TODO: pass character
-        // character, 
+        character,
     })
 }
 
