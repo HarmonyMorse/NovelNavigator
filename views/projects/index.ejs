@@ -13,7 +13,7 @@
             <tr>
                 <td><%= p.title %></td>
                 <td><%= p.updatedAt.getMonth() + 1 %>/<%= p.updatedAt.getDate() %>/<%= p.updatedAt.getFullYear() %></td>
-                <td><%= p.characterCount %></td>
+                <td><%= p.characters.length %></td>
                 <td><a href="/projects/<%= p._id %>">MORE</a></td>
             </tr>
         <% }); %>
