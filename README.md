@@ -50,13 +50,13 @@ Novel Navigator is deployed live on [Heroku](https://novel-navigator-333c0f21d48
 **Signed in, character page wireframe**  
 ![Image](/assets/character-page-wf.png) 
 **Signed out screenshot**  
-![Image](/assets/signed-out-ss.png)
+![Image](/assets/signed-out-ss.png)  
 **Signed in, projects home screenshot**  
-![Image](/assets/projects-home-ss.png) 
+![Image](/assets/projects-home-ss.png)  
 **Signed in, project page screenshot**  
-![Image](/assets/project-page-ss.png) 
+![Image](/assets/project-page-ss.png)  
 **Signed in, character page screenshot**  
-![Image](/assets/character-page-ss.png)
+![Image](/assets/character-page-ss.png)  
 ***
 
 ### **_Future Updates_**
