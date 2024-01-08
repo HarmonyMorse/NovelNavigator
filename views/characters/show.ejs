@@ -64,11 +64,11 @@
         <em>Neurotype: </em>
         <span #neurotypetext>
             <% if(character.neurotype === "neurotypical") { %>
-                <span id="nt"><%= character.neurotype %></span>
+            <span id="nt"><%= character.neurotype %></span>
             <% } else if(character.neurotype === "neurodivergent") { %>
-                <span id="nd"><%= character.neurotype %></span>
+            <span id="nd"><%= character.neurotype %></span>
             <% } else { %>
-                Unlisted
+            Unlisted
             <% } %>
         </span>
     </div>
@@ -105,5 +105,10 @@
             <% } %>
         </span>
     </div>
+</div>
+<div id="deleting">
+    <form action="/characters/<%= character._id %>?_method=DELETE" class="delete-form" method="POST">
+        <button type="submit">Delete <%= character.name %></button>
+    </form>
 </div>
 <%- include('../partials/footer') %>
