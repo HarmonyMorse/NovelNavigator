@@ -18,7 +18,7 @@ Novel Navigator was created as part of the back-end build in General Assembly's 
 This project is largely still in developement, so stick around for new features and updates! 😉
 ***
 
-### **_Live sit_**
+### **_Live Site_**
 Novel Navigator is deployed live on [Heroku](https://novel-navigator-333c0f21d48b.herokuapp.com/)!
 ***
 
