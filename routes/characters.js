@@ -17,4 +17,8 @@ router.post('/', ensureLoggedIn, charactersCtrl.create);
 // GET /:id
 router.get('/:id', ensureLoggedIn, charactersCtrl.show);
 
+// Delete specific character
+// DELETE /:id
+router.delete('/:id', ensureLoggedIn, charactersCtrl.delete);
+
 module.exports = router;
