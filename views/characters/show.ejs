@@ -1,3 +1,109 @@
 <%- include('../partials/header') %>
-Your character details here
+<!-- Title will be the name of the character -->
+<div id="character-detils">
+    <br>
+    <h3>Details</h3>
+    <div id="role">
+        <em>Role: </em><%= character.role %>
+    </div>
+    <br>
+    <div id="birthdate">
+        <em>Birthdate: </em>
+        <% if(character.birthdate) { %>
+        <%= character.birthdate.getMonth() + 1 %>
+        /<%= character.birthdate.getDate() %>
+        /<%= character.birthdate.getFullYear() %>
+        <% } else { %>
+        Unlisted
+        <% } %>
+    </div>
+    <br>
+</div>
+<div id="character-appearance">
+    <h3>Appearance</h3>
+    <div id="gender">
+        <em>Gender: </em>
+        <% if(character.gender) { %>
+        <%= character.gender %>
+        <% } else { %>
+        Unlisted
+        <% } %>
+    </div>
+    <br>
+    <div id="hair">
+        <em>Hair: </em>
+        <% if(character.hair) { %>
+        <%= character.hair %>
+        <% } else { %>
+        Unlisted
+        <% } %>
+    </div>
+    <br>
+    <div id="eyes">
+        <em>Eyes: </em>
+        <% if(character.eyes) { %>
+        <%= character.eyes %>
+        <% } else { %>
+        Unlisted
+        <% } %>
+    </div>
+    <br>
+    <div id="height">
+        <em>Height: </em>
+        <% if(character.height) { %>
+        <%= character.height %>
+        <% } else { %>
+        Unlisted
+        <% } %>
+    </div>
+</div>
+<br>
+<div id="character-personality">
+    <h3>Personality</h3>
+    <div id="neurotype">
+        <em>Neurotype: </em>
+        <span #neurotypetext>
+            <% if(character.neurotype === "neurotypical") { %>
+                <span id="nt"><%= character.neurotype %></span>
+            <% } else if(character.neurotype === "neurodivergent") { %>
+                <span id="nd"><%= character.neurotype %></span>
+            <% } else { %>
+                Unlisted
+            <% } %>
+        </span>
+    </div>
+    <br>
+    <div id="mbti">
+        <em>MBTI: </em>
+        <span #mbtitext>
+            <% if(character.mbti) { %>
+            <%= character.mbti %>
+            <% } else { %>
+            Unlisted
+            <% } %>
+        </span>
+    </div>
+    <br>
+    <div id="zodiac">
+        <em>Zodiac: </em>
+        <span #zodiactext>
+            <% if(character.zodiac) { %>
+            <%= character.zodiac %>
+            <% } else { %>
+            Unlisted
+            <% } %>
+        </span>
+    </div>
+    <br>
+    <div id="enneagram">
+        <em>Enneagram: </em>
+        <span #enneagramtext>
+            <% if(character.enneagram) { %>
+            <%= character.enneagram %>
+            <% } else { %>
+            Unlisted
+            <% } %>
+        </span>
+    </div>
+</div>
 <%- include('../partials/footer') %>
