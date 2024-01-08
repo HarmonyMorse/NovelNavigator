@@ -41,9 +41,20 @@ async function create(req, res) {
     }
 }
 
+async function deleteCharacter(req, res) {
+    const projectId = req.session.projectId;
+    const project = await Project.findById(projectId);
+    const character = await Character.findById(req.params.id);
+    project.characters.remove(character);
+    await project.save();
+    await Character.findByIdAndDelete(req.params.id);
+    res.redirect(`/projects/${projectId}`);
+}
+
 module.exports = {
     // index,
     show,
     new: newCharacter,
     create,
+    delete: deleteCharacter,
 };
